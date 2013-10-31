@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Token TypeAhead";
+}
+
+<h2>Token TypeAhead</h2>
+
+
+
+@*<div>
+        <input type="text" id="demo-input-facebook-theme" name="blah2" />
+        <input type="button" value="Submit" />
+   
+    </div>*@
+
+
+<div>
+
+    <h2>My Token TypeAhead</h2>
+        <input type="text" id="my-demo-input-facebook-theme" name="blah2" />
+        <input type="button" value="Submit" />
+    @section scripts {
+
+         <script type="text/javascript" src="@Url.Content("/Scripts/lib/mynewtokeninput.js")"></script>
+       @* <script type="text/javascript" src="@Url.Content("/Scripts/lib/tokeninput.js")"></script>*@
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+                $("#my-demo-input-facebook-theme").mynewtokenInput("http://localhost:39215/api/values?skip=0&take=12&", {
+                    theme: "facebook",
+                    preventDuplicates: true
+                });
+
+                //$("#demo-input-facebook-theme").tokenInput("http://shell.loopj.com/tokeninput/tvshows.php", {
+                //    theme: "facebook",
+                //    preventDuplicates: true
+                //});
+            
+
+            });
+        </script>
+        }
+
+    
+
+    </div>
